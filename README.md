@@ -1,4 +1,5 @@
-#Diabetes Risk Decision Support System
+Diabetes Risk Decision Support System
+
 Overview
 
 This project was developed for BC Analytics, a health-tech startup aiming to improve patient outcomes through data-driven healthcare solutions. The goal is to identify patients at risk of diabetes early and support healthcare providers with actionable insights.
