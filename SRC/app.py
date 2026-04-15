@@ -197,7 +197,7 @@ MODAL_PANEL = {
     "boxShadow": "0 8px 32px rgba(0,0,0,0.25)",
 }
 
-modelBundle = joblib.load("diabetesModel.pkl")
+modelBundle = joblib.load("ARTIFACTS/DiabetesRFModel.pkl")
 model = modelBundle["model"]
 featureColumns = modelBundle["featureColumns"]
 categoricalColumns = list(modelBundle["categoricalColumns"])
@@ -208,7 +208,7 @@ shapBackground = modelBundle.get("shapBackground")
 sliderBounds = dict(modelBundle.get("sliderBounds") or {})
 featureQuantiles = dict(modelBundle.get("featureQuantiles") or {})
 
-df = pd.read_csv("Diabetes_and_LifeStyle_Dataset.csv")
+df = pd.read_csv("DATA/Diabetes_and_LifeStyle_Dataset.csv")
 df.columns = df.columns.str.strip()
 
 for col in featureColumns:

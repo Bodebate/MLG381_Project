@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 #loading dataset
-df = pd.read_csv("Diabetes_and_LifeStyle_Dataset.csv")
+df = pd.read_csv(filepath_or_buffer="DATA/Diabetes_and_LifeStyle_Dataset.csv")
 
 #cleaning column names
 df.columns = df.columns.str.strip()
@@ -37,8 +37,10 @@ y = df[targetColumn]
 #separate
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
-)
+    )
 
 #saving data split to csv
 pd.concat([X_test,y_test],axis=1).to_csv(path_or_buf="DATA/Test.csv",index = False)
 pd.concat([X_train,y_train],axis=1).to_csv(path_or_buf="DATA/Train.csv",index = False)
+
+print("Data PreProcessing successful")
