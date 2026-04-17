@@ -1121,5 +1121,5 @@ def close_modal(n):
 
 if __name__ == "__main__":
     dash_app.run(debug=False)
-    port = int(os.environ.get("PORT", 18050))
+    port = int(os.environ.get("PORT", 4000))
     dash_app.run_server(host="0.0.0.0", port=port)
