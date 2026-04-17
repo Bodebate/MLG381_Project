@@ -9,8 +9,8 @@ from dash import html, dcc, Input, Output, State, no_update
 from dash.exceptions import PreventUpdate
 import subprocess as sp
 
-sp.run(["python","SRC/prepare_data.py"])
-sp.run(["python","SRC/train.py"])
+sp.run(["python","prepare_data.py"])
+sp.run(["python","train.py"])
 
 
 def friendly_feature_label(column: str) -> str:
@@ -20,7 +20,7 @@ def friendly_feature_label(column: str) -> str:
         ("Hdl", "HDL"),
         ("Ldl", "LDL"),
         ("Bp", "BP"),
-        ("Hba1C", "HbA1c"),
+        ("Hba1C", "HbA1c"), 
         ("Hba1c", "HbA1c"),
     ):
         text = text.replace(wrong, right)
@@ -274,7 +274,7 @@ def assign_section(col: str) -> str:
     k = col_key(col)
     if k in DEMOGRAPHICS:
         return "Demographics"
-    if k in POSITIVE_INFLUENCES:
+    if k in POSITIVE_INFLUENCES:    
         return "Positive influences"
     if k in NEGATIVE_INFLUENCES:
         return "Negative influences"
