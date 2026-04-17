@@ -7,6 +7,10 @@ import dash
 import os 
 from dash import html, dcc, Input, Output, State, no_update
 from dash.exceptions import PreventUpdate
+import subprocess as sp
+
+sp.run(["python","SRC/prepare_data.py"])
+sp.run(["python","SRC/train.py"])
 
 
 def friendly_feature_label(column: str) -> str:
