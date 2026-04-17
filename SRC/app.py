@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import joblib
 import dash
+import os 
 from dash import html, dcc, Input, Output, State, no_update
 from dash.exceptions import PreventUpdate
 
@@ -1115,4 +1116,6 @@ def close_modal(n):
 
 
 if __name__ == "__main__":
-    dash_app.run(debug=True)
+    dash_app.run(debug=False)
+    port = int(os.environ.get("PORT", 8050))
+    dash_app.run_server(host="0.0.0.0", port=port)
